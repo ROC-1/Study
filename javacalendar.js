@@ -64,7 +64,7 @@ const MonthList = {
 let termdata = { SD:[26, 20, 20, 12], SM:[1, 4, 7, 10], SW:[0, 0, 0, 0]/*A or B*/, Weeks:[10,10,10,9],
     WEvents:{A:[1,0,1,0,0,0,0], B:[0,1,0,0,1,0,0]}, WEventName:"Weekly Event", 
     HolidayWeeks: [2, 3, 2, 0], PFDays:{"1":["26-01", "27-01", "28-01", "03-04"], "2":["27-04"]}
-}; const defaultTerm = 2;
+}; const defaultTerm = 3;
 /////////////////////////
 
 let term = defaultTerm;
