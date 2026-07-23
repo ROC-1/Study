@@ -1,5 +1,9 @@
 []
 //After updating to Github, change mode to 1 and remove /* */ for imports, set Testmode in javamain to 0, change script to module
+window.gss = gss
+window.sss = sss
+window.getel = getel
+window.c = c
 let mode = 1 // 1=Normal 2=AutoLogin 3=Test
 setTimeout(() => {
     switch (mode) {
