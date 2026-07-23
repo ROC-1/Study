@@ -10,9 +10,12 @@
     <script src="javagames.js"></script>
 </head>
 <body>
-    <div id="topDiv">
-        <div id="headline-1"><b>&nbsp;Games</b></div>
+    <div class="segmented">
+        <button class="segment" id="segCal">Term Calendar</button>
+        <button class="segment">Notes</button>
+        <button class="segment active">Games</button>
     </div>
+
     <h2 style="margin-top: 50px;margin-left: 40px;line-height: 2px;">Snake</h2>
     <div id="SnakeDiv">
         <div id="Game-Snake">
@@ -24,7 +27,7 @@
             </div>
         </div>
         <div id="Info-Snake">
-            Instructions:<br>Arrow keys to move<br>Space to reset<br><span onclick="Snake_ShowMore()"><u>________</u></span>
+            Instructions:<br>Arrow keys to move<br>Space to reset<br><!--span onclick="Snake_ShowMore()"><u>________</u></span-->
         </div>
     </div>
 </body>
