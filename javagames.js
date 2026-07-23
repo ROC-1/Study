@@ -31,6 +31,10 @@ document.addEventListener('keyup', function(event) {
 
 ////DOC LOADED////
 document.addEventListener("DOMContentLoaded", () => {
+    window.gss = gss
+    window.sss = sss
+    window.getel = getel
+    window.c = c
     ResetData_Snake(1)
     Snake_drawSquares()
 });
