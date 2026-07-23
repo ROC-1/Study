@@ -8,6 +8,7 @@ window.getel = function getel(el) {return document.getElementById(el)}
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
+
 window.gss = function gss(type) {
     if (type==1){return(Number(sessionStorage.getItem("Testmode")))}
     if (type==2){return(Number(sessionStorage.getItem("ISADMIN")))}
@@ -42,10 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (gss(1)==1){sss(2, 1)} else {sss(2, 0)}
         if (gss(1)==1){sss(3, "Admin")} else {sss(3, 0)}
     }
-    if (gss(3) != 0) {localStorage.setItem("UserLocal", gss(3))}
-    else {const UL=localStorage.getItem("UserLocal");if(UL != 0 && UL != null){sss(3, UL);StartLoad()
-        if(gss(3) == "Admin") {sss(2, 1)}
-    }}
+    if (gss(3) != 0 && gss(3) != "") {localStorage.setItem("UserLocal", gss(3))}
 
     const headline = document.getElementById("headline-1");
     TopBar = document.createElement("div");
