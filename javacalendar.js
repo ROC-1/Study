@@ -13,21 +13,6 @@ setTimeout(() => {
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-// Firebase config
-const firebaseConfig = {
-    apiKey: "AIzaSyBVOC6RVvQw2V7YSN8MF24kM0p9N1tcfTo",
-    authDomain: "calendar-5487e.firebaseapp.com",
-    databaseURL: "https://calendar-5487e-default-rtdb.firebaseio.com",
-    projectId: "calendar-5487e",
-    storageBucket: "calendar-5487e.firebasestorage.app",
-    messagingSenderId: "705086479682",
-    appId: "1:705086479682:web:5511ad5b3e00921947bcdb",
-    measurementId: "G-CGMRRC6B0B"
-};
-// Initialize Firebase and get database
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-
 
 let dayStates = {}; // Store event text per day
 let hasUnsavedChanges = false;
@@ -40,7 +25,6 @@ let TimerText = NaN;
 let TimerDetectSec = 0;
 let STelement = 0;
 let pressingControl = 0;
-let pressingBacktick = 0;
 let loadclicked = 0;
 let time = new Date();
 let mousex = 0;
@@ -91,8 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
     TimerText.setAttribute("minutes", 0);
     TimerText.setAttribute("clicked", "0");
     STelement = getel("STime");
-    if (gss(3)!=0) {getel("LoggedIn").innerText = "Logged in!"}
-    if (gss(1)==1) {getel("LoggedIn").innerText = "In Test Mode"}
+    //if (gss(3)!=0) {getel("LoggedIn").innerText = "Logged in!"}
+    //if (gss(1)==1) {getel("LoggedIn").innerText = "In Test Mode"}
     if (gss(2)==1 && gss(1)!=1) {
         StartLoad();
     }
@@ -173,11 +157,11 @@ function Loop() {
         STelement.innerHTML =`Overtime: <span id="colored">${0-dayStates["studyTime"]}m</span>`
         getel("colored").style.color = "#00ee00";
     } else {STelement.style.color = "#ffffff"}
-    if (getel("LogInBg").hidden == false) {
+    /*if (getel("LogInBg").hidden == false) {
         if (getel("UserInput").value != "" && getel("PasswordInput").value != "") {
             getel("LogIn").setAttribute("Ready","1")}
         else {getel("LogIn").setAttribute("Ready","0")}
-    }
+    }*/
     setTimeout(Loop, 400)
 }
 
@@ -188,16 +172,12 @@ document.addEventListener('keydown', function(event) {
     if (event.key == "?") {c("daystates = "+dayStates)}
     if (event.key == "|") {c("TDList = "+TDList)}
     if (event.key == "Control" && hasLoaded && document.activeElement !== calInput) {storeDays()}
-    if (event.key == "`") {pressingBacktick = 1}
-    if (event.key == "1" && pressingBacktick) {sss(2, 1);getel("LoggedIn").innerText = "Welcome back Riley";sss(3,"Admin")}
     if (event.key == "Enter") {if(adding_TDL==1) {TLD_add();hasUnsavedChanges=1} else if(document.activeElement==getel("eventInput")){if(selectedDay!=0){AddEvent()}} else {storeDays()}}
     if (event.key == "t"&&document.activeElement!==calInput&&adding_TDL==0&&getel("LogInBg").hidden==true) {window.scrollTo({top: 1000,behavior: 'smooth'});setTimeout(TLD_add_start, 20)}
     if (event.key == "ArrowRight") {TUp()}
     if (event.key == "ArrowLeft") {TDown()}
     //c("Key pressed: "+event.key)
-}); document.addEventListener('keyup', function(event) {
-    if (event.key == "`") {pressingBacktick = 0}
-});
+})
 
 ///LOAD///🔽
 window.StartLoad = StartLoad;
@@ -655,6 +635,7 @@ function TUp() {term=Math.min(Math.max(term+1,1),4);getel("TermNum").innerText=t
     termdata.SD[term-1]=termdata.SD[term-1]; termdata.SM[term-1]=termdata.SM[term-1]; buildCalendar();
     getel("FinalAdd").hidden = true;getel("AddEvent").hidden = true}
 
+/*
 window.NotLoggedIn = NotLoggedIn;
 function NotLoggedIn() {
     if (gss(3)==0) {
@@ -695,7 +676,7 @@ function LogOut() {
     TDList = {}; loadTDL();
     dayStates = {}; buildCalendar()
     getel("LogOut").hidden = true
-}
+}*/
 
 let adding_TDL = 0;
 window.TLD_add_start = TLD_add_start;
