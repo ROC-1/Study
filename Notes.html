@@ -6,143 +6,192 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Logo.png" type="image/png">
     <script src="javamain.js"></script>
+    <script src="GlobalJSON.js"></script>
+    <!--Turn the script below to a module-->
 </head>
 <body>
     <div id="topDiv">
-        <div id="headline-1"><b>&nbsp;Notes</b></div>
+    <div class="segmented">
+        <button class="segment" id="segCal">Term Calendar</button>
+        <button class="segment active">Notes</button>
+        <button class="segment">Games</button>
     </div>
-
-    <!--MATH EXT-->
-    <div class="dropdown-divider">
+    <button id="LoggedIn" class="LogB" onclick="NotLoggedIn()">Not Logged In</button>
+    <button id="LogOut" class="LogB" onclick="LogOut()" hidden>Log out</button>
+    </div>
+    
+    <h1>Year 11 Study Notes</h1>
+    <!--MATH EXT--><div class="dropdown-divider">
     <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1">
         <div class="title">
             <span class="main">Maths - Extention only</span>
-            <span class="sub"><b>Cost: Free</b></span>
+            <span class="sub">Cost: Free</span>
         </div>
-        <div class="arrow" aria-hidden="true">▾</div>
-    </div>
-    <div class="divider-line"></div>
-    <div class="dropdown-content" id="dd-content-1" aria-hidden="true">
+        <div class="arrow">▾</div>
+    </div><div class="divider-line"></div>
+    <div class="dropdown-content" id="dd-content-1">
         <div class="dropdown-list">
             <a href="https://docs.google.com/document/d/13zHGhCUHNpGctZBGML0ZT0rgIStVMp35ddMTuS17kL4/edit?tab=t.0" target="_blank"class="dropdown-item" id="dropdown-item-1">
                 <img class="docsLogo" src="Images/google-docs-logo.png">
-                <span class="docText">Maths extension study notes</span>
-                <span class="muted-small"></span>
+                <span class="docText">Maths extension study notes</span><p></p>
             </a>
         </div>
-    </div>
+    </div></div>
 
-    <!--MATH ADVANCED-->
-    <div class="dropdown-divider">
+    <!--MATH ADVANCED--><div class="dropdown-divider">
     <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1">
         <div class="title">
             <span class="main">Maths - Advanced only</span>
-            <span class="sub"><b>Cost: Free</b></span>
+            <span class="sub"><b>Cost: $10 (with a free sample)</b></span>
         </div>
-        <div class="arrow" aria-hidden="true">▾</div>
-    </div>
-    <div class="divider-line"></div>
-    <div class="dropdown-content" id="dd-content-1" aria-hidden="true">
+        <div class="arrow">▾</div>
+    </div><div class="divider-line"></div>
+    <div class="dropdown-content" id="dd-content-1">
         <div class="dropdown-list">
-            <a href="https://docs.google.com/document/d/1JMrVGQnr998X8cLZGqbHolLSJ0uf1SYxsdkwoe9gqK0/edit?tab=t.kwgd4k4ammij" target="_blank"class="dropdown-item" id="dropdown-item-1">
+            <button class="OpenKofi" onclick="OpenKofi()">Purchase Maths Advanced ($10)</button>
+            <a href="https://docs.google.com/document/d/1mxKbP6Jihit1eNwT5gX37rOuT7vagYMJN1HxvjryrDU/edit?tab=t.0" target="_blank"class="dropdown-item" id="dropdown-item-1">
                 <img class="docsLogo" src="Images/google-docs-logo.png">
-                <span class="docText">Maths advanced study notes</span>
-                <span class="muted-small"></span>
+                <span class="docText">Maths advanced sample</span><p></p>
             </a>
         </div>
-    </div>
+    </div></div>
 
-    <!--CHEM-->
-    <div class="dropdown-divider">
-    <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1" id="dropdown-toggle-u1">
+    <!--CHEM--><div class="dropdown-divider">
+    <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1">
         <div class="title">
             <span class="main">Chemistry</span>
             <span class="sub"><b>Cost: $10 (coming soon)</b></span>
         </div>
-        <div class="arrow" aria-hidden="true">▾</div>
-    </div>
-    <div class="divider-line"></div>
-    <div class="dropdown-content" id="dd-content-1" aria-hidden="true">
-        <!--div class="dropdown-list">
-            <a href="phys doc here" target="_blank"class="dropdown-item" id="dropdown-item-1">
+        <div class="arrow">▾</div>
+    </div><div class="divider-line"></div>
+    <div class="dropdown-content" id="dd-content-1">
+        <div class="dropdown-list">
+            <button class="OpenKofi" onclick="OpenKofi()">Purchase Chemistry ($10)</button>
+            <a href="https://docs.google.com/document/d/1y6DWPmkFAwDFrygfYW8YRr5VP2Yv5WlWD250vW4-MvQ/edit?tab=t.0" target="_blank"class="dropdown-item" id="dropdown-item-1">
                 <img class="docsLogo" src="Images/google-docs-logo.png">
-                <span class="docText">Maths advanced study notes</span>
-                <span class="muted-small"></span>
+                <span class="docText">Chemistry sample</span><p></p>
             </a>
-        </div-->
-    </div>
+        </div>
+    </div></div>
 
-    <!--PHYS-->
-    <div class="dropdown-divider">
-    <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1" id="dropdown-toggle-u2">
+    <!--PHYS--><div class="dropdown-divider">
+    <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1">
         <div class="title">
             <span class="main">Physics</span>
             <span class="sub"><b>Cost: $10 (coming soon)</b></span>
         </div>
-        <div class="arrow" aria-hidden="true">▾</div>
-    </div>
-    <div class="divider-line"></div>
-    <div class="dropdown-content" id="dd-content-1" aria-hidden="true">
-        <!--div class="dropdown-list">
-            <a href="phys doc here" target="_blank"class="dropdown-item" id="dropdown-item-1">
+        <div class="arrow">▾</div>
+    </div><div class="divider-line"></div>
+    <div class="dropdown-content" id="dd-content-1">
+        <div class="dropdown-list">
+            <button class="OpenKofi" onclick="OpenKofi()">Purchase Physics ($10)</button>
+            <a href="https://docs.google.com/document/d/1-1nnIR8_BPNmxXy6XeyclLwYICGRrpTwWV4Pj6Gaaek/edit?tab=t.0f" target="_blank"class="dropdown-item" id="dropdown-item-1">
                 <img class="docsLogo" src="Images/google-docs-logo.png">
-                <span class="docText">Maths advanced study notes</span>
-                <span class="muted-small"></span>
+                <span class="docText">Physics sample</span><p></p>
             </a>
-        </div-->
-    </div>
+        </div>
+    </div></div>
 
-    <!--ECO-->
-    <div class="dropdown-divider">
-    <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1" id="dropdown-toggle-u3">
+    <!--ECO--><div class="dropdown-divider">
+    <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1">
         <div class="title">
             <span class="main">Economics</span>
-            <span class="sub"><b>Cost: $10 (coming soon)</b></span>
+            <span class="sub"><b>Cost: $10</b></span>
         </div>
-        <div class="arrow" aria-hidden="true">▾</div>
-    </div>
-    <div class="divider-line"></div>
-    <div class="dropdown-content" id="dd-content-1" aria-hidden="true">
-        <!--div class="dropdown-list">
-            <a href="phys doc here" target="_blank"class="dropdown-item" id="dropdown-item-1">
+        <div class="arrow">▾</div>
+    </div><div class="divider-line"></div>
+    <div class="dropdown-content" id="dd-content-1">
+        <div class="dropdown-list">
+            <button class="OpenKofi" onclick="OpenKofi()">Purchase Physics ($10)</button>
+            <a href="https://docs.google.com/document/d/1D8xQwPRAYn0uLD01_Qx6qcI7nuENNm8R3-bCxj3YRKs/edit?tab=t.0" target="_blank"class="dropdown-item" id="dropdown-item-1">
                 <img class="docsLogo" src="Images/google-docs-logo.png">
-                <span class="docText">Maths advanced study notes</span>
-                <span class="muted-small"></span>
+                <span class="docText">Economics sample</span><p></p>
             </a>
-        </div-->
+        </div>
+    </div></div>
+
+<!--Blurb-->
+<div id="blurb"><u>Why you should use my notes</u><br><br>My online study notes have helped me achieve excellent results:<br><br><span id="blurbS">
+    ● 87% and 100% in Maths advanced<br>● 86% and 94% in Maths extension (ranked 2nd and 1st)<br>● 86% in Chemistry (ranked 5th out of 48)<br>● Ranked top 30% in Physics and top 50% in Economics</span></div>
+    
+<!--KOFI MENU-->
+<div id="KofiBg" hidden onclick="hideKofi()">
+    <div id="KofiMenu" hidden>
+        <br>Buying study notes is almost ready
+</div></div>
+
+<!--Log In-->
+<div id="LogInBg" hidden>
+    <div id="LogInDiv"><p id="LogInP">Log in to buy study notes and use the calendar feature</p>
+        <input class="LogInput" id="UserInput" type="text" placeholder="Username">
+        <input class="LogInput" id="PasswordInput" type="text" placeholder="Password">
+        <p>If you do not have a username for yourself, this will create one for you. Make sure to remember log-in info.</p>
+        <button id="LogIn" onclick="LogIn()">Log In</button>
+        <button id="cancelLogIn" onclick="CancelLogIn()">Cancel</button>
     </div>
+</div>
 
 
-    <script>
+
+<script>
+const JSON = window.GlobalJSON
+
+function OpenKofi() {
+    getel("KofiBg").hidden = false
+    getel("KofiMenu").hidden = false
+}
+function hideKofi() {
+    getel("KofiBg").hidden = true
+    getel("KofiMenu").hidden = true
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (gss(1)==1) {getel("Title").innerHTML="Test - Study Notes"}
     document.querySelectorAll('.dropdown-divider').forEach(dropdown => {
-      const toggle = dropdown.querySelector('.dropdown-toggle');
-      const content = dropdown.querySelector('.dropdown-content');
-      const arrow = dropdown.querySelector('.arrow');
-
-      content.style.maxHeight = '0px';
-
-      function open(){
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const content = dropdown.querySelector('.dropdown-content');
+        const arrow = dropdown.querySelector('.arrow');
+        content.style.maxHeight = '0px';
+        function open(){
         content.style.maxHeight = content.scrollHeight + 'px';
         content.classList.add('open');
         arrow.style.transform = 'rotate(180deg)';
-      }
-
-      function close(){
+        }
+        function close(){
         content.style.maxHeight = content.scrollHeight + 'px';
         content.offsetHeight; // force reflow
         content.style.maxHeight = '0px';
         content.classList.remove('open');
         arrow.style.transform = 'rotate(0deg)';
-      }
-
-      toggle.addEventListener('click', () => {
-        if(content.classList.contains('open')){
-          close();
-        } else {
-          open();
         }
-      });
+        toggle.addEventListener('click', () => {
+        if(content.classList.contains('open')){
+            close();
+        } else {
+            open();
+        }
+        });
     });
+
+    document.querySelectorAll(".sub").forEach((sub, index) => {
+        console.log(index, sub.innerText);
+        if(index==0){sub.innerHTML = "Cost: <b>Free<b>"} //Maths Ext
+        if(index==1){sub.innerHTML = "Cost: $"+JSON.NotesCost+" (with a free sample)"} //Maths Adv
+        if(index==2){sub.innerHTML = "Cost: $"+JSON.NotesCost+" (Module 1 free)"} //Chem
+        if(index==3){sub.innerHTML = "Cost: $"+JSON.NotesCost+" (Module 1 free)"} //Phys
+        if(index==4){sub.innerHTML = "Cost: <b>Free</b>"} //Eco
+        if(index==5){sub.innerHTML = "Cost: <b>Free</b>"} //Eng
+    });
+
+    document.querySelectorAll(".OpenKofi").forEach((sub, index) => { //Button you click to open ko-fi purchase
+        console.log(index, sub.innerText);
+        if(index==0){sub.innerHTML = "Purchase Maths Advanced notes ($5)"} //Maths Adv
+        if(index==1){sub.innerHTML = "Purchase Chemistry notes ($5)"} //Chem
+        if(index==2){sub.innerHTML = "Purchase Physics notes ($5)"} //Phys
+        if(index==3){sub.innerHTML = "Purchase Economics notes ($5)"} //Eco
+        if(index==4){sub.innerHTML = "Cost: <b>Free<b>"} //Eng
+    });
+})
     </script>
 </body>
 </html>
