@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="module" src="javacalendar.js" id='--OPEN IN GITHUB--'></script>
+    <script type="module" src="javacalendar.js" id='OPEN IN GITHUB'></script>
+    <script src="javacalendar.js"></script>
 
     <meta charset="UTF-8">
-    <title id="Title">Term 1 Calendar</title>
+    <title id="Title">Term 2 Calendar</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Logo.png" type="image/png">
     <script src="javamain.js"></script>
+    <script src="GlobalJSON.js"></script>
 </head>
 <body>
     <div id="topDiv">
-        <div id="headline-1"><b>Term Calendar</b></div>
-        <!--p id="quickText">Today: No events</p-->
-        <button id="LoggedIn" class="LogB" onclick="NotLoggedIn()">Not Logged In</button>
+    <div class="segmented">
+        <button class="segment active" id="segCal">Term Calendar</button>
+        <button class="segment">Notes</button>
+        <button class="segment">Games</button>
     </div>
+    <button id="LoggedIn" class="LogB" onclick="NotLoggedIn()">Not Logged In</button>
     <button id="LogOut" class="LogB" onclick="LogOut()" hidden>Log out</button>
+    </div>
 
     <div id="TermText">
         <svg class="TTG" onclick="TDown()"><polygon points="58,11 58,61 18,36" fill="#eee" stroke="black" stroke-width="3"></svg>
