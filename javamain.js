@@ -5,6 +5,7 @@ sessionStorage.setItem("Testmode",0) // change in GITHUB
 window.c = console.log
 window.getel = function getel(el) {return document.getElementById(el)}
 
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
@@ -126,8 +127,8 @@ function Loop() {
 }
 
 document.addEventListener("click", (e) => {
-    mousex = e.pageX;
-    mousey = e.pageY;
+    const mousex = e.pageX;
+    const mousey = e.pageY;
     if (e.target === document.body || e.target === document.documentElement) {
         getel("LogOut").hidden = true
     }
