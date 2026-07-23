@@ -134,14 +134,9 @@
 
 
 
-<script>
-//////// <script type="module">
 
-const JSON = window.GlobalJSON
-window.gss = gss
-window.sss = sss
-window.getel = getel
-window.c = c
+ <script type="module">
+
 
 function OpenKofi() {
     getel("KofiBg").hidden = false
@@ -153,6 +148,12 @@ function hideKofi() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    window.gss = gss
+    window.sss = sss
+    window.getel = getel
+    window.c = c
+    const JSON = window.GlobalJSON
+
     if (gss(1)==1) {getel("Title").innerHTML="Test - Study Notes"}
     document.querySelectorAll('.dropdown-divider').forEach(dropdown => {
         const toggle = dropdown.querySelector('.dropdown-toggle');
