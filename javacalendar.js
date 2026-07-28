@@ -25,7 +25,7 @@ let mousey = 0;
 let selectedDay = 0;
 let dayKey = 0;
 let password;
-window.password = password;
+window.password = null;
 let AddE;
 let editE;
 let delE;
