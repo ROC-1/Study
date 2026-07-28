@@ -1,18 +1,18 @@
-sessionStorage.setItem("Testmode",1) // change in GITHUB
+sessionStorage.setItem("Testmode",0) // change in GITHUB
 // gss: Get Session Storage
 // sss: Set Session Storage
 // 1: Testmode  2: ISADMIN  3: User
 window.c = console.log
 window.getel = function getel(el) {return document.getElementById(el)}
 
-/*
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 setTimeout(() => {
     window.app = initializeApp(firebaseConfig);
     window.db = getDatabase(app);
 }, 300);
-*/
+
 
 window.gss = function gss(type) {
     if (type==1){return(Number(sessionStorage.getItem("Testmode")))}
