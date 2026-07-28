@@ -17,6 +17,8 @@
         <button class="segment active">Notes</button>
         <button class="segment">Games</button>
     </div>
+    <!--button id="LoggedIn" class="LogB" onclick="NotLoggedIn()">Not Logged In</button>
+    <button id="LogOut" class="LogB" onclick="LogOut()" hidden>Log out</button-->
     </div>
     
     <h1>Year 11 Study Notes</h1>
@@ -108,7 +110,6 @@
         </div>
     </div></div>
 
-
 <!--Blurb-->
 <div id="blurb"><u>Why you should use my notes</u><br><br>My online study notes have helped me achieve excellent results:<br><br><span id="blurbS">
     ● 87% and 100% in Maths advanced<br>● 86% and 94% in Maths extension (ranked 2nd and 1st)<br>● 86% in Chemistry (ranked 5th out of 48)<br>● Ranked top 30% in Physics and top 45% in Economics</span></div>
@@ -122,7 +123,7 @@
     <div id="KofiMenu" hidden>
         Read the instructions below before buying the notes
         <br>
-        <img src="Images/Kofi-screenshot.png" id="Kofi-screenshot">
+        <img src="Images/Kofi-screenshot.jpg" id="Kofi-screenshot">
         <a id="KofiA" href="https://ko-fi.com/rcstudy" target="_blank"><div id=KofiD>Buy study notes on Ko-fi.com</div></a>
 </div></div>
 
@@ -158,12 +159,12 @@ document.addEventListener("click", (e) => {
     mousey = e.pageY;})
 
 document.addEventListener("DOMContentLoaded", () => {
-    window.gss = gss
-    window.sss = sss
-    window.getel = getel
-    window.hideKofi = hideKofi
-    window.c = c
-    const JSON = window.GlobalJSON
+    window.gss = gss;
+    window.sss = sss;
+    window.getel = getel;
+    window.hideKofi = hideKofi;
+    window.c = c;
+    const JSON = window.GlobalJSON;
     window.OpenKofi = OpenKofi;
 
     if (gss(1)==1) {getel("Title").innerHTML="Test - Study Notes"}
