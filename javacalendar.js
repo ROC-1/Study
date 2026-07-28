@@ -18,6 +18,7 @@ let TimerDetectSec = 0;
 let STelement = 0;
 let pressingControl = 0;
 let loadclicked = 0;
+window.loadclicked = loadclicked;
 let time = new Date();
 let mousex = 0;
 let mousey = 0;
