@@ -1,94 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="module" src="javacalendar.js" id='OPEN IN GITHUB'></script>
-    
-    <script type="module" src="javamain.js" id='OPEN IN GITHUB'></script>
-
     <meta charset="UTF-8">
-    <title id="Title">Term 3 Calendar</title>
+    <title id="Title">Study Notes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="Logo.png" type="image/png">
     <script src="GlobalJSON.js"></script>
+    
+    <script type="module" src="javamain.js" id='OPEN IN GITHUB'></script>
+
 </head>
 <body>
     <div id="topDiv">
     <div class="segmented">
-        <button class="segment active" id="segCal">Term Calendar</button>
-        <button class="segment">Notes</button>
+        <button class="segment" id="segCal">Term Calendar</button>
+        <button class="segment active">Notes</button>
         <button class="segment">Games</button>
     </div>
-    <button id="LoggedIn" class="LogB" onclick="NotLoggedIn()">Not Logged In</button>
-    <button id="LogOut" class="LogB" onclick="LogOut()" hidden>Log out</button>
+    <!--button id="LoggedIn" class="LogB" onclick="NotLoggedIn()">Not Logged In</button>
+    <button id="LogOut" class="LogB" onclick="LogOut()" hidden>Log out</button-->
     </div>
-
-    <div id="TermText">
-        <svg class="TTG" onclick="TDown()"><polygon points="58,11 58,61 18,36" fill="#eee" stroke="black" stroke-width="3"></svg>
-            Term <span id="TermNum">4</span>
-        <svg class="TTG" onclick="TUp()"><polygon points="18,11 18,61 58,36" fill="#eee" stroke="black" stroke-width="3"></svg>
-    </div>
-
-    <div id="buttonRow">
-        <input type="text" id="eventInput" placeholder="Create event"/>
-        <!--button class="eventClear" onclick="clearInput()">✖️ Clear</button-->
-        <!--button class="eventClear" id="changeColor">Colour: &nbsp;<div id="changeColorInside"></div></button-->
-        <div id="colorPickerWrapper">
-            <button id="changeColor" class="eventClear">
-                <span>&nbsp;Colour:</span>
-                <span id="changeColorInside"></span>
-            </button>
-            <div id="colorDropdown" hidden>
-                <div class="colorOption" data-color="#4CAF50" id="green"></div>
-                <div class="colorOption" data-color="#ffa500" id="orange"></div>
-                <div class="colorOption" data-color="#ad1919" id="red"></div>
-                <div class="colorOption" data-color="#aa85b1" id="purple"></div>
-                <div class="colorOption" data-color="#838383" id="grey"></div>
-                <div class="colorOption" data-color="#eeeeee" id="clear"></div>
-            </div>
-            <button class="eventClear" id="FinalAdd" onclick="AddEvent()" hidden>Add Event</button>
+    
+    <h1>Year 11 Study Notes</h1>
+    <!--MATH EXT--><div class="dropdown-divider">
+    <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1">
+        <div class="title">
+            <span class="main">Maths - Extention only</span>
+            <span class="sub">Cost: Free</span>
         </div>
-        <!--button id="saveWarning"><b>!!</b></button-->
-        <button id="saveEvent"onclick="storeDays()">Save Changes</button>
-    </div>
-
-    <div id="calendarScroll">
-        <div id="load_heading"></div>
-        <button id="loadC" onclick="StartLoad()"><b>Log In to use the calendar</b></button>
-        <p id="load_message"></p>
-        <div class="calendar-grid"></div>
-    </div>
-
-    <div id="dueList">
-        <h3 hidden id="STime">Study Time:</h3>
-        <button hidden id="STimeAdd" onclick="STimeC()">Generate Time</button>
-        <button hidden id="TimeB" onclick="Studying()">▶
-            <!--div id="TimeD"></div-->
-        </button>
-        <h2 id="Timer"></h2>
-        <h2 id="dueText" style="line-height: 30px;">📚 Due Work</h2>
-    </div>
-
-    <div id="LogInBg" hidden>
-        <div id="LogInDiv"><p id="LogInP">Log in to save your calendar events</p>
-            <input class="LogInput" id="UserInput" type="text" placeholder="Username">
-            <input class="LogInput" id="PasswordInput" type="text" placeholder="Password">
-            <p>If you do not have a username for yourself, this will create one for you. Make sure to remember log-in info.</p>
-            <button id="LogIn" onclick="LogIn()">Log In</button>
-            <button id="cancelLogIn" onclick="CancelLogIn()">Cancel</button>
+        <div class="arrow">▾</div>
+    </div><div class="divider-line"></div>
+    <div class="dropdown-content" id="dd-content-1">
+        <div class="dropdown-list">
+            <a href="https://docs.google.com/document/d/13zHGhCUHNpGctZBGML0ZT0rgIStVMp35ddMTuS17kL4/edit?tab=t.0" target="_blank"class="dropdown-item" id="dropdown-item-1">
+                <img class="docsLogo" src="Images/google-docs-logo.png">
+                <span class="docText">Maths extension study notes</span><p></p>
+            </a>
         </div>
-    </div>
+    </div></div>
 
-    <button class="eventButtons" id="AddEvent" onclick="AddEventStart()" hidden>Add Event</button>
-    <button class="eventButtons" id="EditEvent" onclick="editEvent()" hidden>Edit Event</button>
-    <button class="eventButtons" id="DeleteEvent" onclick="deleteEvent()" hidden>Delete Event</button>
+    <!--MATH ADVANCED--><div class="dropdown-divider">
+    <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1">
+        <div class="title">
+            <span class="main">Maths - Advanced only</span>
+            <span class="sub"><b>Cost: $10 (with a free sample)</b></span>
+        </div>
+        <div class="arrow">▾</div>
+    </div><div class="divider-line"></div>
+    <div class="dropdown-content" id="dd-content-1">
+        <div class="dropdown-list">
+            <button class="OpenKofi" onclick="OpenKofi()">Purchase Maths Advanced ($10)</button>
+            <a href="https://docs.google.com/document/d/1mxKbP6Jihit1eNwT5gX37rOuT7vagYMJN1HxvjryrDU/edit?tab=t.0" target="_blank"class="dropdown-item" id="dropdown-item-1">
+                <img class="docsLogo" src="Images/google-docs-logo.png">
+                <span class="docText">Maths advanced sample</span><p></p>
+            </a>
+        </div>
+    </div></div>
 
-    <div id="TDL">
-        <h3 id="TDL_MainText">To Do List</h3>
-        <button id="TDL_button" class="add_TDL" onclick="TLD_add_start()">+</button>
-        <input hidden type="text" id="TDLInput" class="add_TDL" placeholder="Add a task...">
-        <input hidden type="number" id="TDLInput2" class="add_TDL" placeholder="0">
-        <button hidden id="TDLAddEnd" class="add_TDL" onclick="TLD_add()">Add</button>
-        <button id="TDLSave" class="add_TDL" onclick="storeDays()">Save</button>
+    <!--CHEM--><div class="dropdown-divider">
+    <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1">
+        <div class="title">
+            <span class="main">Chemistry</span>
+            <span class="sub"><b>Cost: $10 (coming soon)</b></span>
+        </div>
+        <div class="arrow">▾</div>
+    </div><div class="divider-line"></div>
+    <div class="dropdown-content" id="dd-content-1">
+        <div class="dropdown-list">
+            <button class="OpenKofi" onclick="OpenKofi()">Purchase Chemistry ($10)</button>
+            <a href="https://docs.google.com/document/d/1y6DWPmkFAwDFrygfYW8YRr5VP2Yv5WlWD250vW4-MvQ/edit?tab=t.0" target="_blank"class="dropdown-item" id="dropdown-item-1">
+                <img class="docsLogo" src="Images/google-docs-logo.png">
+                <span class="docText">Chemistry sample</span><p></p>
+            </a>
+        </div>
+    </div></div>
+
+    <!--PHYS--><div class="dropdown-divider">
+    <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1">
+        <div class="title">
+            <span class="main">Physics</span>
+            <span class="sub"><b>Cost: $10 (coming soon)</b></span>
+        </div>
+        <div class="arrow">▾</div>
+    </div><div class="divider-line"></div>
+    <div class="dropdown-content" id="dd-content-1">
+        <div class="dropdown-list">
+            <button class="OpenKofi" onclick="OpenKofi()">Purchase Physics ($10)</button>
+            <a href="https://docs.google.com/document/d/1-1nnIR8_BPNmxXy6XeyclLwYICGRrpTwWV4Pj6Gaaek/edit?tab=t.0f" target="_blank"class="dropdown-item" id="dropdown-item-1">
+                <img class="docsLogo" src="Images/google-docs-logo.png">
+                <span class="docText">Physics sample</span><p></p>
+            </a>
+        </div>
+    </div></div>
+
+    <!--ECO--><div class="dropdown-divider">
+    <div class="dropdown-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="dd-content-1">
+        <div class="title">
+            <span class="main">Economics</span>
+            <span class="sub"><b>Cost: $10</b></span>
+        </div>
+        <div class="arrow">▾</div>
+    </div><div class="divider-line"></div>
+    <div class="dropdown-content" id="dd-content-1">
+        <div class="dropdown-list">
+            <a href="https://docs.google.com/document/d/1jiplV_w9QNb0AgR2Sc4ZrCY7akg4oqL_QSAlIa6cvAI/edit?tab=t.0" target="_blank"class="dropdown-item" id="dropdown-item-1">
+                <img class="docsLogo" src="Images/google-docs-logo.png">
+                <span class="docText">Economics study notes</span><p></p>
+            </a>
+        </div>
+    </div></div>
+
+<!--Blurb-->
+<div id="blurb"><u>Why you should use my notes</u><br><br>My online study notes have helped me achieve excellent results:<br><br><span id="blurbS">
+    ● 87% and 100% in Maths advanced<br>● 86% and 94% in Maths extension (ranked 2nd and 1st)<br>● 86% in Chemistry (ranked 5th out of 48)<br>● Ranked top 30% in Physics and top 45% in Economics</span></div>
+
+<!--div id="NeedToLogIn" hidden>
+    You need to log in before buying the study notes<br>(Use the dark blue button on the top-right)
+</div-->
+    
+<!--KOFI MENU-->
+<div id="KofiBg" hidden onclick="hideKofi()">
+    <div id="KofiMenu" hidden>
+        Read the instructions below before buying the notes
+        <br>
+        <img src="Images/Kofi-screenshot.png" id="Kofi-screenshot">
+        <a id="KofiA" href="https://ko-fi.com/rcstudy" target="_blank"><div id=KofiD>Buy study notes on Ko-fi.com</div></a>
+</div></div>
+
+<!--Log In-->
+<div id="LogInBg" hidden>
+    <div id="LogInDiv"><p id="LogInP">Log in to buy study notes and use the calendar feature</p>
+        <input class="LogInput" id="UserInput" type="text" placeholder="Username">
+        <input class="LogInput" id="PasswordInput" type="text" placeholder="Password">
+        <p>If you do not have a username for yourself, this will create one for you. Make sure to remember log-in info.</p>
+        <button id="LogIn" onclick="LogIn()">Log In</button>
+        <button id="cancelLogIn" onclick="CancelLogIn()">Cancel</button>
     </div>
+</div>
+
+
+
+ <script type="module">
+
+let mousex = 0;
+let mousey = 0;
+
+function OpenKofi() {
+    getel("KofiBg").hidden = false
+    getel("KofiMenu").hidden = false
+}
+function hideKofi() {
+    getel("KofiBg").hidden = true
+    getel("KofiMenu").hidden = true
+}
+
+document.addEventListener("click", (e) => {
+    mousex = e.pageX;
+    mousey = e.pageY;})
+
+document.addEventListener("DOMContentLoaded", () => {
+    window.gss = gss
+    window.sss = sss
+    window.getel = getel
+    window.c = c
+    const JSON = window.GlobalJSON
+    window.OpenKofi = OpenKofi;
+
+    if (gss(1)==1) {getel("Title").innerHTML="Test - Study Notes"}
+    document.querySelectorAll('.dropdown-divider').forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const content = dropdown.querySelector('.dropdown-content');
+        const arrow = dropdown.querySelector('.arrow');
+        content.style.maxHeight = '0px';
+        function open(){
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.classList.add('open');
+        arrow.style.transform = 'rotate(180deg)';
+        }
+        function close(){
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.offsetHeight; // force reflow
+        content.style.maxHeight = '0px';
+        content.classList.remove('open');
+        arrow.style.transform = 'rotate(0deg)';
+        }
+        toggle.addEventListener('click', () => {
+        if(content.classList.contains('open')){
+            close();
+        } else {
+            open();
+        }
+        });
+    });
+
+    document.querySelectorAll(".sub").forEach((sub, index) => {
+        console.log(index, sub.innerText);
+        if(index==0){sub.innerHTML = "Cost: <b>Free<b>"} //Maths Ext
+        if(index==1){sub.innerHTML = "Cost: $"+JSON.NotesCost+" (with a free sample)"} //Maths Adv
+        if(index==2){sub.innerHTML = "Cost: $"+JSON.NotesCost+" (Module 1 free)"} //Chem
+        if(index==3){sub.innerHTML = "Cost: $"+JSON.NotesCost+" (Module 1 free)"} //Phys
+        if(index==4){sub.innerHTML = "Cost: <b>Free</b>"} //Eco
+        if(index==5){sub.innerHTML = "Cost: <b>Free</b>"} //Eng
+    });
+
+    document.querySelectorAll(".OpenKofi").forEach((sub, index) => { //Button you click to open ko-fi purchase
+        console.log(index, sub.innerText);
+        if(index==0){sub.innerHTML = "Purchase Maths Advanced notes ($5)"} //Maths Adv
+        if(index==1){sub.innerHTML = "Purchase Chemistry notes ($5)"} //Chem
+        if(index==2){sub.innerHTML = "Purchase Physics notes ($5)"} //Phys
+        if(index==3){sub.innerHTML = "Cost: <b>Free<b>"} //Eco
+        if(index==4){sub.innerHTML = "Cost: <b>Free<b>"} //Eng
+    });
+})
+    </script>
 </body>
 </html>
