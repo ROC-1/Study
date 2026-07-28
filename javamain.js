@@ -87,7 +87,7 @@ function LogIn() {
                 password = getel("PasswordInput").value;
                 getel("LogInBg").hidden = true
                 sss(3, getel("UserInput").value)
-                getel("LoggedIn").innerText = "Logged: "+gss(3);
+                getel("LoggedIn").innerText = "Logged In: "+gss(3);
                 localStorage.setItem("UserLocal", gss(3))
                 StartLoad()
             } else {
@@ -110,7 +110,7 @@ function LogOut() {
 }
 
 function Loop() {
-    if (window.location.href == "Calendar.html") { //also the function addeventlistener("click", (e)) has restriction to login for Cal only
+    if (window.location.href.split("/").at(-1) == "Calendar.html" || window.location.href.split("/").at(-1) == "Calendar") { //also the function addeventlistener("click", (e)) has restriction to login for Cal only
         if (getel("LogInBg").hidden == false) {
             if (getel("UserInput").value != "" && getel("PasswordInput").value != "") {
                 getel("LogIn").setAttribute("Ready","1")}
