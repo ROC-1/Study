@@ -1,14 +1,18 @@
-sessionStorage.setItem("Testmode",0) // change in GITHUB
+sessionStorage.setItem("Testmode",1) // change in GITHUB
 // gss: Get Session Storage
 // sss: Set Session Storage
 // 1: Testmode  2: ISADMIN  3: User
 window.c = console.log
 window.getel = function getel(el) {return document.getElementById(el)}
 
-
+/*
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-
+setTimeout(() => {
+    window.app = initializeApp(firebaseConfig);
+    window.db = getDatabase(app);
+}, 300);
+*/
 
 window.gss = function gss(type) {
     if (type==1){return(Number(sessionStorage.getItem("Testmode")))}
@@ -34,8 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector(".segment.active")
                 .classList.remove("active");
             segment.classList.add("active");
-            if (index==0) {window.location.href = "index.html"}
-            if (index==1) {window.location.href = "Notes.html"}
+            if (index==0) {window.location.href = "Calendar.html"}
+            if (index==1) {window.location.href = "index.html"}
             if (index==2) {window.location.href = "Games.html"}
         });
     });
@@ -46,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     if (gss(3) != 0 && gss(3) != "") {localStorage.setItem("UserLocal", gss(3))}
 
-    const headline = document.getElementById("headline-1");
     TopBar = document.createElement("div");
     TopBar.className = "TopBar"
     document.body.appendChild(TopBar);
@@ -109,28 +112,32 @@ function LogOut() {
 }
 
 function Loop() {
-    if (getel("LogInBg").hidden == false) {
-        if (getel("UserInput").value != "" && getel("PasswordInput").value != "") {
-            getel("LogIn").setAttribute("Ready","1")}
-        else {getel("LogIn").setAttribute("Ready","0")}
-    }
-    if (gss(3)!="" && gss(3) != 0) {
-        getel("LoggedIn").innerHTML = "Logged In: <b>"+gss(3)
-        if (gss(3) == "Admin") {
-            getel("LoggedIn").innerHTML = "Welcome back Riley"
+    if (window.location.href == "Calendar.html") { //also the function addeventlistener("click", (e)) has restriction to login for Cal only
+        if (getel("LogInBg").hidden == false) {
+            if (getel("UserInput").value != "" && getel("PasswordInput").value != "") {
+                getel("LogIn").setAttribute("Ready","1")}
+            else {getel("LogIn").setAttribute("Ready","0")}
         }
-    } else {
-        getel("LoggedIn").innerHTML = "Not Loggen In"
+        if (gss(3)!="" && gss(3) != 0) {
+            getel("LoggedIn").innerHTML = "Logged In: <b>"+gss(3)
+            if (gss(3) == "Admin") {
+                getel("LoggedIn").innerHTML = "Welcome back Riley"
+            }
+        } else {
+            getel("LoggedIn").innerHTML = "Not Loggen In"
+        }
+        if (gss(1)==1) {getel("LoggedIn").innerText = "In Test Mode"}
+        setTimeout(Loop, 400)
     }
-    if (gss(1)==1) {getel("LoggedIn").innerText = "In Test Mode"}
-    setTimeout(Loop, 400)
 }
 
 document.addEventListener("click", (e) => {
-    const mousex = e.pageX;
-    const mousey = e.pageY;
-    if (e.target === document.body || e.target === document.documentElement) {
-        getel("LogOut").hidden = true
+    if (window.location.href == "Calendar.html") {
+        const mousex = e.pageX;
+        const mousey = e.pageY;
+        if (e.target === document.body || e.target === document.documentElement) {
+            getel("LogOut").hidden = true
+        }
     }
 })
 
