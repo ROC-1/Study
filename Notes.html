@@ -17,8 +17,8 @@
         <button class="segment active">Notes</button>
         <button class="segment">Games</button>
     </div>
-    <button id="LoggedIn" class="LogB" onclick="NotLoggedIn()">Not Logged In</button>
-    <button id="LogOut" class="LogB" onclick="LogOut()" hidden>Log out</button>
+    <!--button id="LoggedIn" class="LogB" onclick="NotLoggedIn()">Not Logged In</button>
+    <button id="LogOut" class="LogB" onclick="LogOut()" hidden>Log out</button-->
     </div>
     
     <h1>Year 11 Study Notes</h1>
@@ -103,22 +103,29 @@
     </div><div class="divider-line"></div>
     <div class="dropdown-content" id="dd-content-1">
         <div class="dropdown-list">
-            <button class="OpenKofi" onclick="OpenKofi()">Purchase Physics ($10)</button>
-            <a href="https://docs.google.com/document/d/1D8xQwPRAYn0uLD01_Qx6qcI7nuENNm8R3-bCxj3YRKs/edit?tab=t.0" target="_blank"class="dropdown-item" id="dropdown-item-1">
+            <a href="https://docs.google.com/document/d/1jiplV_w9QNb0AgR2Sc4ZrCY7akg4oqL_QSAlIa6cvAI/edit?tab=t.0" target="_blank"class="dropdown-item" id="dropdown-item-1">
                 <img class="docsLogo" src="Images/google-docs-logo.png">
-                <span class="docText">Economics sample</span><p></p>
+                <span class="docText">Economics study notes</span><p></p>
             </a>
         </div>
     </div></div>
 
+
 <!--Blurb-->
 <div id="blurb"><u>Why you should use my notes</u><br><br>My online study notes have helped me achieve excellent results:<br><br><span id="blurbS">
-    ● 87% and 100% in Maths advanced<br>● 86% and 94% in Maths extension (ranked 2nd and 1st)<br>● 86% in Chemistry (ranked 5th out of 48)<br>● Ranked top 30% in Physics and top 50% in Economics</span></div>
+    ● 87% and 100% in Maths advanced<br>● 86% and 94% in Maths extension (ranked 2nd and 1st)<br>● 86% in Chemistry (ranked 5th out of 48)<br>● Ranked top 30% in Physics and top 45% in Economics</span></div>
+
+<!--div id="NeedToLogIn" hidden>
+    You need to log in before buying the study notes<br>(Use the dark blue button on the top-right)
+</div-->
     
 <!--KOFI MENU-->
 <div id="KofiBg" hidden onclick="hideKofi()">
     <div id="KofiMenu" hidden>
-        <br>Buying study notes is almost ready
+        Read the instructions below before buying the notes
+        <br>
+        <img src="Images/Kofi-screenshot.png" id="Kofi-screenshot">
+        <a id="KofiA" href="https://ko-fi.com/rcstudy" target="_blank"><div id=KofiD>Buy study notes on Ko-fi.com</div></a>
 </div></div>
 
 <!--Log In-->
@@ -134,9 +141,10 @@
 
 
 
-
  <script type="module">
 
+let mousex = 0;
+let mousey = 0;
 
 function OpenKofi() {
     getel("KofiBg").hidden = false
@@ -147,12 +155,17 @@ function hideKofi() {
     getel("KofiMenu").hidden = true
 }
 
+document.addEventListener("click", (e) => {
+    mousex = e.pageX;
+    mousey = e.pageY;})
+
 document.addEventListener("DOMContentLoaded", () => {
     window.gss = gss
     window.sss = sss
     window.getel = getel
     window.c = c
     const JSON = window.GlobalJSON
+    window.OpenKofi = OpenKofi;
 
     if (gss(1)==1) {getel("Title").innerHTML="Test - Study Notes"}
     document.querySelectorAll('.dropdown-divider').forEach(dropdown => {
@@ -196,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(index==0){sub.innerHTML = "Purchase Maths Advanced notes ($5)"} //Maths Adv
         if(index==1){sub.innerHTML = "Purchase Chemistry notes ($5)"} //Chem
         if(index==2){sub.innerHTML = "Purchase Physics notes ($5)"} //Phys
-        if(index==3){sub.innerHTML = "Purchase Economics notes ($5)"} //Eco
+        if(index==3){sub.innerHTML = "Cost: <b>Free<b>"} //Eco
         if(index==4){sub.innerHTML = "Cost: <b>Free<b>"} //Eng
     });
 })
