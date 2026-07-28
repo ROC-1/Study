@@ -1,10 +1,10 @@
 []
 //After updating to Github, remove /* */ for imports for all scripts, set Testmode in javamain to 0, change script to module in HTML
 
-/*
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-*/
+
 
 let dayStates = {}; // Store event text per day
 let hasUnsavedChanges = false;
