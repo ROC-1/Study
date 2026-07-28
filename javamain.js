@@ -1,4 +1,4 @@
-sessionStorage.setItem("Testmode",1) // change in GITHUB
+sessionStorage.setItem("Testmode",0) // change in GITHUB
 // gss: Get Session Storage
 // sss: Set Session Storage
 // 1: Testmode  2: ISADMIN  3: User
