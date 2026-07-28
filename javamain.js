@@ -1,4 +1,4 @@
-sessionStorage.setItem("Testmode",0) // change in GITHUB
+sessionStorage.setItem("Testmode",1) // change in GITHUB
 // gss: Get Session Storage
 // sss: Set Session Storage
 // 1: Testmode  2: ISADMIN  3: User
@@ -12,7 +12,6 @@ setTimeout(() => {
     window.app = initializeApp(firebaseConfig);
     window.db = getDatabase(app);
 }, 300);
-
 
 window.gss = function gss(type) {
     if (type==1){return(Number(sessionStorage.getItem("Testmode")))}
@@ -62,10 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
             sss(1, 0)
         }if (gss(2)===null) {
             sss(2, 0)
-        }if (gss(3)===null) {
+        }if (gss(3)===null || gss(3) == 0) {
             sss(3, localStorage.getItem("UserLocal") || 0)
         }
-    }, 2000)
+    }, 1000)
     Loop()
 })
 
@@ -127,8 +126,8 @@ function Loop() {
             getel("LoggedIn").innerHTML = "Not Loggen In"
         }
         if (gss(1)==1) {getel("LoggedIn").innerText = "In Test Mode"}
-        setTimeout(Loop, 400)
     }
+    setTimeout(Loop, 400)
 }
 
 document.addEventListener("click", (e) => {
