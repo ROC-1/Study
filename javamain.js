@@ -13,6 +13,7 @@ setTimeout(() => {
     window.db = getDatabase(app);
 }, 300);
 
+
 window.gss = function gss(type) {
     if (type==1){return(Number(sessionStorage.getItem("Testmode")))}
     if (type==2){return(Number(sessionStorage.getItem("ISADMIN")))}
@@ -88,9 +89,7 @@ function LogIn() {
                 sss(3, getel("UserInput").value)
                 getel("LoggedIn").innerText = "Logged: "+gss(3);
                 localStorage.setItem("UserLocal", gss(3))
-                if (loadclicked) {
-                    StartLoad()
-                }
+                StartLoad()
             } else {
                 getel("PasswordInput").value = ""
                 getel("PasswordInput").placeholder = "Incorrect Password"
